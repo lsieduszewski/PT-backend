@@ -27,8 +27,9 @@ public class CoupleController {
     public Couple couple(@RequestBody newCoupleDTO newCoupleDTO) {
 
         Couple newcouple = new Couple();
-        newcouple.setMale(dancerRepository.findOne(newCoupleDTO.getIdMale()));
-        newcouple.setFemale(dancerRepository.findOne(newCoupleDTO.getIdFemale()));
+        newcouple.setMale(dancerRepository.findOne(newCoupleDTO.getMale()));
+        newcouple.setFemale(dancerRepository.findOne(newCoupleDTO.getFemale()));
+
 
         coupleRepository.save(newcouple);
 

@@ -1,26 +1,44 @@
 package sieduszewski.lukasz.DTO;
 
+import sieduszewski.lukasz.Data.Couple;
+import sieduszewski.lukasz.Data.Dancer;
+
 public class newCoupleDTO {
 
-    private Integer idMale;
-    private Integer idFemale;
+    private Integer male;
+    private Integer female;
+    private String club;
 
     public newCoupleDTO() {
     }
 
-    public Integer getIdMale() {
-        return idMale;
+    public newCoupleDTO(Integer male, Integer female, String club) {
+        this.male = male;
+        this.female = female;
+        this.club = club;
     }
 
-    public void setIdMale(Integer idMale) {
-        this.idMale = idMale;
+    public Integer getMale() {
+        return male;
     }
 
-    public Integer getIdFemale() {
-        return idFemale;
+    public void setMale(Integer male) {
+        this.male = male;
     }
 
-    public void setIdFemale(Integer idFemale) {
-        this.idFemale = idFemale;
+    public Integer getFemale() {
+        return female;
+    }
+
+    public void setFemale(Integer female) {
+        this.female = female;
+    }
+
+    public String getClub() {
+        return club;
+    }
+
+    public void setClub(String club) {
+        this.club = club;
     }
 }
