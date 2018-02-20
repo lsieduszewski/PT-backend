@@ -5,4 +5,6 @@ import sieduszewski.lukasz.Data.Couple;
 
 
 public interface CoupleRepository extends JpaRepository<Couple, Integer> {
+
+
 }

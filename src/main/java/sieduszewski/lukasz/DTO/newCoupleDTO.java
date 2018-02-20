@@ -7,12 +7,12 @@ public class newCoupleDTO {
 
     private Integer male;
     private Integer female;
-    private String club;
+    private Integer club;
 
     public newCoupleDTO() {
     }
 
-    public newCoupleDTO(Integer male, Integer female, String club) {
+    public newCoupleDTO(Integer male, Integer female, Integer club) {
         this.male = male;
         this.female = female;
         this.club = club;
@@ -34,11 +34,11 @@ public class newCoupleDTO {
         this.female = female;
     }
 
-    public String getClub() {
+    public Integer getClub() {
         return club;
     }
 
-    public void setClub(String club) {
+    public void setClub(Integer club) {
         this.club = club;
     }
 }
