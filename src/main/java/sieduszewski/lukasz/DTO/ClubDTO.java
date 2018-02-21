@@ -16,7 +16,7 @@ public class ClubDTO {
         this.id = club.getId();
         this.name = club.getName();
         this.city = club.getCity();
-        this. country = club.getCountry();
+        this.country = club.getCountry();
     }
 
     public String getName() {

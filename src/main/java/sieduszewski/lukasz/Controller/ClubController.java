@@ -42,6 +42,20 @@ public class ClubController {
         return clubDTOS;
     }
 
+    @RequestMapping("/addClub")
+    public Club club(@RequestBody ClubDTO clubDTO) {
+
+        Club newclub = new Club();
+        newclub.setName(clubDTO.getName());
+        newclub.setCity(clubDTO.getCity());
+        newclub.setCountry(clubDTO.getCity());
+
+        clubRepository.save(newclub);
+
+        return newclub;
+    }
+
+
 
 
 
