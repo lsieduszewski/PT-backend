@@ -1,30 +1,25 @@
-package sieduszewski.lukasz.Data;
-
+package sieduszewski.lukasz.CentralDB.Data;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import sieduszewski.lukasz.Tournament.Data.TournamentJudge;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Club {
+public class Judge {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private String surname;
     private String name;
     private String city;
     private String country;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "club")
-    private List<Couple> couples;
-
-
-
-
-    public Club() {
-    }
+    @OneToMany(mappedBy = "judge")
+    private List<TournamentJudge> tournamentJudges;
 
     public Integer getId() {
         return id;
@@ -32,6 +27,14 @@ public class Club {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getName() {
@@ -58,11 +61,11 @@ public class Club {
         this.country = country;
     }
 
-    public List<Couple> getCouples() {
-        return couples;
+    public List<TournamentJudge> getTournamentJudges() {
+        return tournamentJudges;
     }
 
-    public void setCouples(List<Couple> couples) {
-        this.couples = couples;
+    public void setTournamentJudges(List<TournamentJudge> tournamentJudges) {
+        this.tournamentJudges = tournamentJudges;
     }
 }

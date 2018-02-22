@@ -1,24 +1,29 @@
-package sieduszewski.lukasz.DTO;
+package sieduszewski.lukasz.CentralDB.Data;
 
-import sieduszewski.lukasz.Data.Judge;
 
-public class JudgeDTO {
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+public class Club {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String surname;
     private String name;
     private String city;
     private String country;
 
-    public JudgeDTO() {
-    }
+    @JsonIgnore
+    @OneToMany(mappedBy = "club")
+    private List<Couple> couples;
 
-    public JudgeDTO(Judge judge) {
-        this.id = judge.getId();
-        this.surname = judge.getSurname();
-        this.name = judge.getName();
-        this.city = judge.getCity();
-        this.country = judge.getCountry();
+
+
+
+    public Club() {
     }
 
     public Integer getId() {
@@ -27,14 +32,6 @@ public class JudgeDTO {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public String getName() {
@@ -59,5 +56,13 @@ public class JudgeDTO {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public List<Couple> getCouples() {
+        return couples;
+    }
+
+    public void setCouples(List<Couple> couples) {
+        this.couples = couples;
     }
 }

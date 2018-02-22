@@ -1,8 +1,5 @@
-package sieduszewski.lukasz.Data;
+package sieduszewski.lukasz.CentralDB.Data;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import sieduszewski.lukasz.DTO.newCoupleDTO;
 
 import javax.persistence.*;
 

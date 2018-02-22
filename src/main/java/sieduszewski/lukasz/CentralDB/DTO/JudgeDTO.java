@@ -1,20 +1,25 @@
-package sieduszewski.lukasz.Data;
+package sieduszewski.lukasz.CentralDB.DTO;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import sieduszewski.lukasz.CentralDB.Data.Judge;
 
-@Entity
-public class Judge {
+public class JudgeDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String surname;
     private String name;
     private String city;
     private String country;
+
+    public JudgeDTO() {
+    }
+
+    public JudgeDTO(Judge judge) {
+        this.id = judge.getId();
+        this.surname = judge.getSurname();
+        this.name = judge.getName();
+        this.city = judge.getCity();
+        this.country = judge.getCountry();
+    }
 
     public Integer getId() {
         return id;

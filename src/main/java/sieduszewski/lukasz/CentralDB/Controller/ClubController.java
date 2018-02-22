@@ -1,4 +1,4 @@
-package sieduszewski.lukasz.Controller;
+package sieduszewski.lukasz.CentralDB.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,14 +6,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sieduszewski.lukasz.DTO.ClubDTO;
-import sieduszewski.lukasz.DTO.CoupleDTO;
-import sieduszewski.lukasz.DTO.newCoupleDTO;
-import sieduszewski.lukasz.Data.Club;
-import sieduszewski.lukasz.Data.Couple;
-import sieduszewski.lukasz.Repository.ClubRepository;
-import sieduszewski.lukasz.Repository.CoupleRepository;
-import sieduszewski.lukasz.Repository.DancerRepository;
+import sieduszewski.lukasz.CentralDB.DTO.ClubDTO;
+import sieduszewski.lukasz.CentralDB.Data.Club;
+import sieduszewski.lukasz.CentralDB.Repository.ClubRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +43,7 @@ public class ClubController {
         Club newclub = new Club();
         newclub.setName(clubDTO.getName());
         newclub.setCity(clubDTO.getCity());
-        newclub.setCountry(clubDTO.getCity());
+        newclub.setCountry(clubDTO.getCountry());
 
         clubRepository.save(newclub);
 

@@ -1,4 +1,4 @@
-package sieduszewski.lukasz.Data;
+package sieduszewski.lukasz.CentralDB.Data;
 
 import org.hibernate.annotations.Type;
 

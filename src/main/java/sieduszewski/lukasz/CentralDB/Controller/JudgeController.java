@@ -1,4 +1,4 @@
-package sieduszewski.lukasz.Controller;
+package sieduszewski.lukasz.CentralDB.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,11 +6,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sieduszewski.lukasz.DTO.ClubDTO;
-import sieduszewski.lukasz.DTO.JudgeDTO;
-import sieduszewski.lukasz.Data.Club;
-import sieduszewski.lukasz.Data.Judge;
-import sieduszewski.lukasz.Repository.JudgeRepository;
+import sieduszewski.lukasz.CentralDB.DTO.JudgeDTO;
+import sieduszewski.lukasz.CentralDB.Data.Judge;
+import sieduszewski.lukasz.CentralDB.Repository.JudgeRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +44,7 @@ public class JudgeController {
         newjudge.setSurname(judgeDTO.getSurname());
         newjudge.setName(judgeDTO.getName());
         newjudge.setCity(judgeDTO.getCity());
-        newjudge.setCountry(judgeDTO.getCity());
+        newjudge.setCountry(judgeDTO.getCountry());
 
         judgeRepository.save(newjudge);
 

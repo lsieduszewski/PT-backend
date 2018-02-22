@@ -1,6 +1,6 @@
-package sieduszewski.lukasz.DTO;
+package sieduszewski.lukasz.CentralDB.DTO;
 
-import sieduszewski.lukasz.Data.Club;
+import sieduszewski.lukasz.CentralDB.Data.Club;
 
 public class ClubDTO {
 

@@ -1,6 +1,6 @@
-package sieduszewski.lukasz.DTO;
+package sieduszewski.lukasz.CentralDB.DTO;
 
-import sieduszewski.lukasz.Data.Couple;
+import sieduszewski.lukasz.CentralDB.Data.Couple;
 
 public class CoupleDTO {
 
