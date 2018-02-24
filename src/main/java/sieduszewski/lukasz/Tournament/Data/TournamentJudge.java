@@ -4,6 +4,7 @@ package sieduszewski.lukasz.Tournament.Data;
 import sieduszewski.lukasz.CentralDB.Data.Judge;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -17,6 +18,9 @@ public class TournamentJudge {
     @ManyToOne(fetch=FetchType.EAGER)    //many na później jak będą kategorie, mogłoby być OneToOne na ten moment
     @JoinColumn(name="judge_id")
     private Judge judge;
+
+    @OneToMany(mappedBy = "tournamentJudge")
+    private List<TournamentJudgeRating> tournamentJudgeRatingList;
 
     public TournamentJudge() {
     }
@@ -45,4 +49,12 @@ public class TournamentJudge {
         this.judge = judge;
     }
 
+
+    public List<TournamentJudgeRating> getTournamentJudgeRatingList() {
+        return tournamentJudgeRatingList;
+    }
+
+    public void setTournamentJudgeRatingList(List<TournamentJudgeRating> tournamentJudgeRatingList) {
+        this.tournamentJudgeRatingList = tournamentJudgeRatingList;
+    }
 }

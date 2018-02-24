@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sieduszewski.lukasz.CentralDB.Repository.JudgeRepository;
+import sieduszewski.lukasz.Tournament.DTO.TournamentJudgeDTO;
 import sieduszewski.lukasz.Tournament.DTO.NewTournamentJudgeDTO;
-import sieduszewski.lukasz.Tournament.DTO.reallyNewTournamentJudgeDTO;
 import sieduszewski.lukasz.Tournament.Data.TournamentJudge;
 import sieduszewski.lukasz.Tournament.Repository.TournamentJudgeRepository;
 
@@ -28,21 +28,21 @@ public class TournamentJudgeController {
     JudgeRepository judgeRepository;
 
     @RequestMapping("/findAll")
-    public List<NewTournamentJudgeDTO> findAllTournamentJudges() {
+    public List<TournamentJudgeDTO> findAllTournamentJudges() {
 
         List<TournamentJudge> tournamentJudges = new ArrayList<>(tournamentJudgeRepository.findAll());
-        List<NewTournamentJudgeDTO> newTournamentJudgeDTOS = new ArrayList<>();
+        List<TournamentJudgeDTO> tournamentJudgeDTOS = new ArrayList<>();
 
         for (TournamentJudge tournamentJudge : tournamentJudges) {
-            NewTournamentJudgeDTO temp = new NewTournamentJudgeDTO(tournamentJudge);
-            newTournamentJudgeDTOS.add(temp);
+            TournamentJudgeDTO temp = new TournamentJudgeDTO(tournamentJudge);
+            tournamentJudgeDTOS.add(temp);
         }
 
-        return newTournamentJudgeDTOS;
+        return tournamentJudgeDTOS;
     }
 
     @RequestMapping("/addJudge")
-    public TournamentJudge tournamentJudge(@RequestBody reallyNewTournamentJudgeDTO newTournamentJudgeDTO) {
+    public TournamentJudge tournamentJudge(@RequestBody NewTournamentJudgeDTO newTournamentJudgeDTO) {
 
         TournamentJudge newTournamentJudge = new TournamentJudge();
         newTournamentJudge.setJudge(judgeRepository.findOne(newTournamentJudgeDTO.getId()));

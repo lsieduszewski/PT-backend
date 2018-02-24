@@ -1,7 +1,11 @@
 package sieduszewski.lukasz.CentralDB.Data;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import sieduszewski.lukasz.Tournament.Data.TournamentCouple;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Couple {
@@ -19,6 +23,10 @@ public class Couple {
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="club_id")
     private Club club;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "couple")
+    private List<TournamentCouple> tournamentCouple;
 
     public Couple() {
     }
@@ -53,5 +61,13 @@ public class Couple {
 
     public void setFemale(Dancer female) {
         this.female = female;
+    }
+
+    public List<TournamentCouple> getTournamentCouple() {
+        return tournamentCouple;
+    }
+
+    public void setTournamentCouple(List<TournamentCouple> tournamentCouple) {
+        this.tournamentCouple = tournamentCouple;
     }
 }
