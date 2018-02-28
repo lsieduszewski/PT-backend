@@ -21,6 +21,9 @@ public class Judge {
     @OneToMany(mappedBy = "judge")
     private List<TournamentJudge> tournamentJudges;
 
+    public Judge() {
+    }
+
     public Integer getId() {
         return id;
     }
